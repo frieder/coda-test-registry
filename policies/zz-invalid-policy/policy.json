@@ -1,0 +1,7 @@
+{
+  "options": {
+    "net.read": "allow",
+    "net.teleport": "deny",
+    "git.push": "ask"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.modelcontextprotocol/filesystem",
+  "title": "Filesystem",
+  "description": "Read, write, search and move files, limited to the folder the server starts in (the agent's project folder).",
+  "repository": {"url": "https://github.com/modelcontextprotocol/servers", "source": "github", "subfolder": "src/filesystem"},
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@modelcontextprotocol/server-filesystem",
+      "version": "latest",
+      "runtimeHint": "npx",
+      "transport": {"type": "stdio"},
+      "packageArguments": [
+        {"type": "positional", "value": ".", "description": "The folder the server may use: the folder it starts in."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "templates": {
+    "bug/S": {"acceptance": "judge", "phases": [
+      {"phase": "reproduce", "mode": "required", "judges": 1},
+      {"phase": "implement", "mode": "required", "title": "Fix", "judges": 1}
+    ]},
+    "feature/S": {"acceptance": "judge", "phases": [
+      {"phase": "implement", "mode": "required", "judges": 1},
+      {"phase": "deploy", "mode": "required", "judges": 1}
+    ]}
+  },
+  "sizes": {"S": {"files": 5, "lines": 200, "sensitive": true}, "M": {"files": 20, "lines": 1000, "sensitive_dependency": true}}
+}

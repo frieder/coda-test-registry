@@ -1,0 +1,6 @@
+{
+  "cli": "claude",
+  "model": "opus",
+  "effort": "high",
+  "categories": ["planning", "review"]
+}

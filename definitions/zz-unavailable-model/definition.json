@@ -1,0 +1,6 @@
+{
+  "cli": "claude",
+  "model": "claude-imaginary-9-preview",
+  "effort": "high",
+  "categories": ["research"]
+}

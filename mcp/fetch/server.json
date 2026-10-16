@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.modelcontextprotocol/fetch",
+  "title": "Fetch",
+  "description": "Fetches a web page and returns it as Markdown, e.g. to read a library's documentation.",
+  "repository": {"url": "https://github.com/modelcontextprotocol/servers", "source": "github", "subfolder": "src/fetch"},
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "mcp-server-fetch",
+      "version": "latest",
+      "runtimeHint": "uvx",
+      "transport": {"type": "stdio"}
+    }
+  ]
+}

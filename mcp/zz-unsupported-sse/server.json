@@ -1,0 +1,10 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.example/zz-unsupported-sse",
+  "title": "Unsupported (SSE only)",
+  "description": "TEST ITEM: a remote server that only offers the old SSE transport. Coda lists it with a problem and can't import it.",
+  "version": "1.0.0",
+  "remotes": [
+    {"type": "sse", "url": "https://mcp.example.invalid/sse"}
+  ]
+}

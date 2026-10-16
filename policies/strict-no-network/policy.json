@@ -1,0 +1,21 @@
+{
+  "options": {
+    "net.read": "deny",
+    "net.send": "deny",
+    "net.message": "deny",
+    "net.expose": "deny",
+    "mcp.call": "deny",
+    "pkg.install-project": "deny",
+    "pkg.install-system": "deny",
+    "pkg.download-run": "deny",
+    "git.push": "deny",
+    "git.remotes-config": "deny",
+    "git.host-act": "deny",
+    "secrets.reveal": "deny",
+    "db.copy-remote": "deny",
+    "infra.switch-env": "deny",
+    "infra.apply": "deny",
+    "infra.deploy": "deny",
+    "infra.remote-run": "deny"
+  }
+}

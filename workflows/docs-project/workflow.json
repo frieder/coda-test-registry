@@ -1,0 +1,66 @@
+{
+  "templates": {
+    "bug/S": {"acceptance": "none", "phases": [
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions"},
+      {"phase": "implement", "mode": "required", "title": "Fix"}
+    ]},
+    "bug/M": {"acceptance": "judge", "phases": [
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions"},
+      {"phase": "implement", "mode": "required", "title": "Fix", "judges": 1}
+    ]},
+    "bug/L": {"acceptance": "user", "phases": [
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions", "skip_needs_user": true},
+      {"phase": "design", "mode": "required", "title": "Outline", "approve": "user", "judges": 1, "skip_needs_user": true, "judge_family": "different"},
+      {"phase": "implement", "mode": "required", "title": "Fix", "judges": 1, "skip_needs_user": true, "judge_family": "different"}
+    ]},
+    "feature/S": {"acceptance": "judge", "phases": [
+      {"phase": "research", "mode": "conditional", "trigger": "research"},
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions"},
+      {"phase": "implement", "mode": "required", "title": "Write", "judges": 1}
+    ]},
+    "feature/M": {"acceptance": "judge", "phases": [
+      {"phase": "research", "mode": "conditional", "trigger": "research", "judges": 1},
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions"},
+      {"phase": "design", "mode": "required", "title": "Outline", "approve": "plans"},
+      {"phase": "implement", "mode": "required", "title": "Write", "judges": 1}
+    ]},
+    "feature/L": {"acceptance": "user", "phases": [
+      {"phase": "research", "mode": "required", "judges": 1, "skip_needs_user": true, "judge_family": "different"},
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions", "skip_needs_user": true},
+      {"phase": "design", "mode": "required", "title": "Outline", "approve": "user", "judges": 1, "skip_needs_user": true, "judge_family": "different"},
+      {"phase": "implement", "mode": "required", "title": "Write", "judges": 2, "skip_needs_user": true, "judge_family": "different"}
+    ]},
+    "change/S": {"acceptance": "none", "phases": [
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions"},
+      {"phase": "implement", "mode": "required", "title": "Edit"},
+      {"phase": "licence", "mode": "conditional", "trigger": "dependencies", "skip_needs_user": true}
+    ]},
+    "change/M": {"acceptance": "judge", "phases": [
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions"},
+      {"phase": "design", "mode": "conditional", "trigger": "judgment", "title": "Outline", "approve": "plans"},
+      {"phase": "implement", "mode": "required", "title": "Edit", "judges": 1},
+      {"phase": "licence", "mode": "conditional", "trigger": "dependencies", "skip_needs_user": true}
+    ]},
+    "change/L": {"acceptance": "user", "phases": [
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions", "skip_needs_user": true},
+      {"phase": "design", "mode": "required", "title": "Outline", "approve": "user", "judges": 1, "skip_needs_user": true, "judge_family": "different"},
+      {"phase": "implement", "mode": "required", "title": "Edit", "judges": 1, "skip_needs_user": true, "judge_family": "different"},
+      {"phase": "licence", "mode": "conditional", "trigger": "dependencies", "skip_needs_user": true}
+    ]},
+    "question": {"acceptance": "none", "phases": [
+      {"phase": "research", "mode": "required"},
+      {"phase": "clarify", "mode": "conditional", "trigger": "open_decisions"}
+    ]}
+  },
+  "sizes": {"S": {"files": 10, "lines": 400, "sensitive": true}, "M": {"files": 40, "lines": 3000, "sensitive_dependency": true}},
+  "sensitive": ["**/.github/workflows/**", ".gitlab-ci.yml", "mkdocs.yml", "docusaurus.config.*", "**/conf.py", "netlify.toml", "vercel.json", "**/_redirects", "**/CODEOWNERS", "LICENSE*"],
+  "manifests": ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "requirements*.txt", "pyproject.toml", "poetry.lock", "Gemfile", "Gemfile.lock", "go.mod", "go.sum"],
+  "ask_me": [{"name": "site_deploy", "label": "site deployment and CI", "paths": ["**/.github/workflows/**", "**/.gitlab-ci.yml", "netlify.toml", "vercel.json", "**/_redirects", "**/Dockerfile*", "**/deploy/**"]}, {"name": "dependencies", "label": "dependency manifests", "paths": ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "requirements*.txt", "pyproject.toml", "poetry.lock", "Gemfile", "Gemfile.lock", "go.mod", "go.sum"]}],
+  "round_limit": 2,
+  "lead_architect": false,
+  "night_decisions": false,
+  "parallel_per_story": 3,
+  "medium_urgency_minutes": 15,
+  "dispatch": "engine",
+  "soft_budget": {"S": 150000, "M": 600000, "L": 2000000}
+}

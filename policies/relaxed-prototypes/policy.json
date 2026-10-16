@@ -1,0 +1,13 @@
+{
+  "options": {
+    "files.delete-uncovered": "allow",
+    "git.discard": "allow",
+    "git.push": "allow",
+    "pkg.download-run": "allow",
+    "secrets.write-files": "allow",
+    "db.migrate": "allow",
+    "db.destroy-local": "allow",
+    "ci.edit": "allow",
+    "mcp.call": "allow"
+  }
+}

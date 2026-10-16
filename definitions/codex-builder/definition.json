@@ -1,0 +1,6 @@
+{
+  "cli": "codex",
+  "model": "gpt-5.5",
+  "effort": "medium",
+  "categories": ["building"]
+}

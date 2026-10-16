@@ -1,0 +1,6 @@
+{
+  "cli": "opencode",
+  "model": "anthropic/claude-sonnet-4-5",
+  "effort": "medium",
+  "categories": ["building", "review"],
+}
